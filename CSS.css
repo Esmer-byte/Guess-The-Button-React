@@ -1,0 +1,22 @@
+.person {
+  display: inline-block;
+  margin: 10px;
+  border: 1px solid#CCC;
+  box-shadow: 0 4px 4px #CCC;
+  width : 150px;
+  padding: 22px;
+  colour: #00CC80;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:lime; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:magenta; left:0px; top:0px;}
+}
