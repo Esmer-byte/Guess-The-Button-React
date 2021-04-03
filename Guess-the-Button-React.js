@@ -1,13 +1,26 @@
-var card = [], card1 = [], n;
-var id1 = 1;
-var RandomNumber;
+var card = [], card1 = [];
+var buttonId = 1, RandomNumber, n;
 var button = (
   <button onClick = {Generate}>
     Start Game
   </button>
 );
 
-function Person (props) {
+function Generate () {
+  this.RandomNumber = Math.floor(Math.random() * n) + 1;
+  while (n != 0) {
+      card.push(
+       <div>
+        <Button id = {buttonId} name = "?"/>
+       </div>
+      );
+      n--;
+    buttonId++;
+  }  
+  ReactDOM.render(card, document.querySelector('#app'));
+}
+
+function Button (props) {
   return (
     <button class = "person" onClick = { 
         function() {
@@ -22,6 +35,7 @@ function Person (props) {
     </button>
   );
 }
+
 function App () {
   function handleChange (e) {
     n = e.target.value;
@@ -30,22 +44,7 @@ function App () {
     <input name = "firstName" onChange = {handleChange} />
   ); 
 }
-
 card1.push(App());
 card1.push(button);
-
-function Generate () {
-  this.RandomNumber = Math.floor(Math.random() * n) + 1;
-  while (n != 0) {
-      card.push(
-       <div>
-        <Person id = {id1} name = "?"/>
-       </div>
-      );
-      n--;
-    id1++;
-  }  
-  ReactDOM.render(card, document.querySelector('#app'));
-}
 ReactDOM.render(card1, document.querySelector('#start'));
 
